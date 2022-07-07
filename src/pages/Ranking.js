@@ -38,18 +38,20 @@ class Ranking extends React.Component {
       const { jogadores } = this.state;
       // console.log(jogadores);
       return (
-        <div>
-          {/* <Header /> */}
-          <h1 data-testid="ranking-title">Classificação</h1>
-          <div>
-            <ol>
-              {
-                jogadores.map((item, index) => (
+        <div className="pai-ranking">
+          <h1 data-testid="ranking-title">Ranking</h1>
+          <div className="ranking">
+            {/* <Header /> */}
+            <div className="ai">
+              <ol>
+                {
+                  jogadores.map((item, index) => (
 
-                  <RankingPlayer key={ index } info={ item } index={ index } />
-                ))
-              }
-            </ol>
+                    <RankingPlayer key={ index } info={ item } index={ index } />
+                  ))
+                }
+              </ol>
+            </div>
           </div>
           <button
             type="button"
