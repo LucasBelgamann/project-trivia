@@ -306,16 +306,20 @@ body {
   margin-right: 3.5rem;
 }
 
-.ai {
+.player-ranking {
   background-color: black;
   border-radius: 15px;
-  height: 40vh;
-  margin: 2rem auto;
-  width: 20vw;
+  height: fit-content;
+  width: 40vw;
+  margin: 2rem 7rem;
 }
 
 .player-ranking img {
   border-radius: 10px;
+}
+
+.player-ranking li {
+  margin-left: 2rem;
 }
 
 .pai-ranking ol {
@@ -468,5 +472,9 @@ body {
 
   .pai-ranking button {
     width: 50vw;
+  }
+
+  .player-ranking {
+    margin-left: -0;
   }
 }
