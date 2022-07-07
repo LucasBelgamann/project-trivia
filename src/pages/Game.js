@@ -121,68 +121,97 @@ class Game extends React.Component {
       return (
         <div>
           <Header />
-          <div>
-            <h3 data-testid="question-category">{result[contador]?.category}</h3>
-            <h3 data-testid="question-text">{result[contador]?.question}</h3>
-          </div>
-          {counter !== 0 ? <h4>{counter}</h4> : <h4>ACABOU O TEMPO</h4>}
-          {showAnswer === true || counter === 0
-            ? answers.map((item, index) => (
-              <div key={ index } data-testid="answer-options">
-                {item === correctAnswer ? (
-                  <button
-                    type="button"
-                    data-testid="correct-answer"
-                    className="right"
-                    disabled
-                  >
-                    {item}
-                  </button>
-                ) : (
-                  <button
-                    type="button"
-                    data-testid={ `wrong-answer-${index}` }
-                    className="wrong"
-                    disabled
-                  >
-                    {item}
-                  </button>
-                )}
-              </div>
-            ))
-            : answers.map((item, index) => (
-              <div key={ index } data-testid="answer-options">
-                {item === correctAnswer ? (
-                  <button
-                    type="button"
-                    data-testid="correct-answer"
-                    onClick={ this.handlePunctuation }
-                  >
-                    {item}
-                  </button>
-                ) : (
-                  <button
-                    type="button"
-                    data-testid={ `wrong-answer-${index}` }
-                    onClick={ this.handleAnswer }
-                  >
-                    {item}
-                  </button>
-                )}
-              </div>
-            ))}
-          {showAnswer === true || counter === 0
-            ? (
-              <button
-                data-testid="btn-next"
-                type="button"
-                onClick={ this.handleNext }
+          <div className="pai-de-todos">
+            <div className="questions">
+              <h3
+                data-testid="question-category"
+                className="question-category"
               >
-                Next
+                {result[contador]?.category}
+              </h3>
+              <h3
+                data-testid="question-text"
+                className="question-text"
+              >
+                {result[contador]?.question}
+              </h3>
+            </div>
+            {counter !== 0
+              ? (
+                <h4
+                  className="contador"
+                >
+                  {`00:${counter}`}
+                </h4>
+              )
+              : (
+                <h4
+                  className="acabou"
+                >
+                  ACABOU O TEMPO
+                </h4>
+              )}
+            <div className="btn-answer">
+              {showAnswer === true || counter === 0
+                ? answers.map((item, index) => (
+                  <div key={ index } data-testid="answer-options">
+                    {item === correctAnswer ? (
+                      <button
+                        type="button"
+                        data-testid="correct-answer"
+                        className="right"
+                        disabled
+                      >
+                        {item}
+                      </button>
+                    ) : (
+                      <button
+                        type="button"
+                        data-testid={ `wrong-answer-${index}` }
+                        className="wrong"
+                        disabled
+                      >
+                        {item}
+                      </button>
+                    )}
+                  </div>
+                ))
+                : answers.map((item, index) => (
+                  <div key={ index } data-testid="answer-options">
+                    {item === correctAnswer ? (
+                      <button
+                        type="button"
+                        data-testid="correct-answer"
+                        onClick={ this.handlePunctuation }
+                      >
+                        {item}
+                      </button>
+                    ) : (
+                      <button
+                        type="button"
+                        data-testid={ `wrong-answer-${index}` }
+                        onClick={ this.handleAnswer }
+                      >
+                        {item}
+                      </button>
+                    )}
+                  </div>
+                ))}
+            </div>
+            {showAnswer === true || counter === 0
+              ? (
+                <button
+                  data-testid="btn-next"
+                  type="button"
+                  className="btn-next"
+                  onClick={ this.handleNext }
+                >
+                  Next
 
-              </button>
-            )
-            : <div />}
+                </button>
+              )
+              : <div />}
+          </div>
         </div>
       );
     }

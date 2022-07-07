@@ -60,29 +60,31 @@ class Feedback extends React.Component {
         const tres = 3;
         return (
           <div>
-            <div>
-              <Header />
-              {assertions >= tres
-                ? <h3 data-testid="feedback-text">Well Done!</h3>
-                : <h3 data-testid="feedback-text">Could be better...</h3>}
-            </div>
-            <div>
-              <h2 data-testid="feedback-total-score">{ score }</h2>
-              <h2 data-testid="feedback-total-question">{ assertions }</h2>
-              <button
-                type="button"
-                data-testid="btn-play-again"
-                onClick={ this.handlePlayAgain }
-              >
-                Play Again
-              </button>
-              <button
-                type="button"
-                data-testid="btn-ranking"
-                onClick={ this.handleRanking }
-              >
-                Ranking
-              </button>
+            <Header />
+            <div className="feedback-pai">
+              <div className="mensagem">
+                {assertions >= tres
+                  ? <h3 data-testid="feedback-text">Well Done!</h3>
+                  : <h3 data-testid="feedback-text">Could be better...</h3>}
+              </div>
+              <div className="btn-feedback">
+                <h2 data-testid="feedback-total-score">{ `Score: ${score}` }</h2>
+                <h2 data-testid="feedback-total-question">{ `Total: ${assertions}` }</h2>
+                <button
+                  type="button"
+                  data-testid="btn-play-again"
+                  onClick={ this.handlePlayAgain }
+                >
+                  <i className="fa-solid fa-rotate-left" />
+                </button>
+                <button
+                  type="button"
+                  data-testid="btn-ranking"
+                  onClick={ this.handleRanking }
+                >
+                  <i className="fa-solid fa-crown" />
+                </button>
+              </div>
             </div>
           </div>
         );

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getToken } from '../services/API';
+import logo from './trivia.png';
 import saveLogin, { saveEmail, myScore, userAssertions } from '../redux/actions';
 
 class Login extends React.Component {
@@ -62,48 +63,47 @@ class Login extends React.Component {
     render() {
       const { nameInput, email, btnPlayDisabled } = this.state;
       return (
-        <div>
-          <form>
-            <input
-              type="text"
-              name="nameInput"
-              value={ nameInput }
-              placeholder="Digite o seu nome"
-              data-testid="input-player-name"
-              onChange={ this.handleChange }
-            />
-            <input
-              type="email"
-              name="email"
-              value={ email }
-              placeholder="Digite o seu email"
-              data-testid="input-gravatar-email"
-              onChange={ this.handleChange }
-            />
-            <button
-              data-testid="btn-play"
-              type="button"
-              value="btn-play"
-              onClick={ this.handleBtnPlay }
-              disabled={ btnPlayDisabled }
-            >
-              Play
-            </button>
-            <button
-              type="button"
-              data-testid="btn-settings"
-              onClick={ this.handleBtnConfig }
-            >
-              Configurações
-            </button>
-            <button
-              type="button"
-              data-testid="btn-ranking"
-              onClick={ this.handleRanking }
-            >
-              Ranking
-            </button>
-          </form>
+        <div className="pai-form">
+          <div className="form-filho">
+            <form className="form">
+              <img src={ logo } className="App-logo" alt="logo" />
+              <input
+                type="text"
+                name="nameInput"
+                value={ nameInput }
+                placeholder="Digite o seu nome"
+                data-testid="input-player-name"
+                onChange={ this.handleChange }
+              />
+              <input
+                type="email"
+                name="email"
+                value={ email }
+                placeholder="Digite o seu email"
+                data-testid="input-gravatar-email"
+                onChange={ this.handleChange }
+              />
+              <div>
+
+                <button
+                  data-testid="btn-play"
+                  type="button"
+                  value="btn-play"
+                  onClick={ this.handleBtnPlay }
+                  disabled={ btnPlayDisabled }
+                >
+                  <i className="fa-solid fa-play" />
+                </button>
+                <button
+                  type="button"
+                  data-testid="btn-settings"
+                  onClick={ this.handleBtnConfig }
+                >
+                  <i className="fa-solid fa-gear" />
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       );
     }
