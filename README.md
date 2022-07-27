@@ -4,10 +4,14 @@ O game Triva foi um projeto de perguntas e respostas, onde o jogador tem trinta 
 
 # Link do projeto
 
-https://port-lucas.vercel.app/
+https://project-trivia-three.vercel.app/
+
+# Como foi desenvolvimento
+
+Esse projeto foi feito em equipe dentro da organização da <a href="https://www.betrybe.com/" target="blanck" >TRYBE</a>. 
 
 # Construído com 
 
-* React - O framework utilizado
-* Redux - Biblioteca para gerenciar estado
-* React testing library - Biblioteca para testes
+* <a href="https://pt-br.reactjs.org/" target="blanck" >React</a> - O framework utilizado.
+* <a href="https://pt-br.reactjs.org/" target="blanck" >Redux</a> - Biblioteca para gerenciar estado.
+* <a href="https://testing-library.com/docs/react-testing-library/intro/" target="blanck" >React Testing Library</a> - Biblioteca para testes.
